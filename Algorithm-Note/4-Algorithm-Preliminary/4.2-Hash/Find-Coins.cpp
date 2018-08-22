@@ -1,5 +1,9 @@
 //
 // Created by authetic on 2018/8/16.
+/*
+ * 找硬币，将给出的序列的两个数组合成目标数，多解情况最小优先
+ * key: 可以用hash方式存储或者二分法，hash简单些
+ */
 //
 
 #include <cstdio>

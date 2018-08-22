@@ -1,5 +1,9 @@
 //
 // Created by authetic on 2018/8/18.
+/*
+ * 求两个数组相乘得到最大值
+ * key: 两个数组排序，最大对最大即可！
+ */
 //
 
 #include <iostream>
