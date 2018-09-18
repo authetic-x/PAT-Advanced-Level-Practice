@@ -8,9 +8,9 @@
 *	vi.size()
 *	vi.clear()
 *	vi.insert()
-	vi.insert(vi.begin()+2, -1)
+	```vi.insert(vi.begin()+2, -1)```
 *	vi.erase()
-	vi.erase(vi.begin()+1, vi.begin()+4)
+	```vi.erase(vi.begin()+1, vi.begin()+4)```
 
 
 ##	set<typename> s
