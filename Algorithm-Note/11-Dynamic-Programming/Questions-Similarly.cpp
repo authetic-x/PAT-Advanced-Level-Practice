@@ -27,7 +27,7 @@ int SLCS(int s[], int n) {
     dp[0] = 0;
     int ans = -1;
     for (int i=1; i<=n; i++) {
-        dp[i] = max(dp[i-1], dp[i-1]+s[i]);
+        dp[i] = max(s[i], dp[i-1]+s[i]);
         if (dp[i] > ans) ans = dp[i];
     }
     return ans;
