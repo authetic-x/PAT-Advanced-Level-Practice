@@ -2,6 +2,7 @@
 // Created by authetic on 2018/11/22.
 /*
  * 多项式相乘，浪费了很多无辜的时间
+ * 需要判断非零项
  */
 //
 
@@ -35,6 +36,11 @@ int main() {
             } else {
                 mp[pn[j].ex + ex] = pn[j].coe * coe;
             }
+        }
+    }
+    for (map<int, double>::iterator it = mp.begin(); it != mp.end(); it ++ ) {
+        if (it->second == 0) {
+            mp.erase(it->first);
         }
     }
     printf("%d", mp.size());

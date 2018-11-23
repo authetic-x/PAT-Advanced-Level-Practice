@@ -1,5 +1,8 @@
 //
 // Created by authetic on 2018/11/22.
+/*
+ * 最大连续子序列
+ */
 //
 
 #include <cstdio>
@@ -10,35 +13,38 @@ using namespace std;
 
 const int maxn = 10010;
 
-int s[maxn], dp[maxn], ind[maxn];
+int a[maxn], s[maxn], dp[maxn];
 
 int main() {
     int n;
+    bool flag = false;
     scanf("%d", &n);
-    for (int i = 1; i <= n; i ++ ) {
-        scanf("%d", &s[i]);
+    for (int i = 0; i < n; i ++ ) {
+        scanf("%d", &a[i]);
+        if (a[i] >= 0) flag = true;
     }
-    dp[0] = -1000000000;
-    ind[0] = 0;
+    if (!flag) {
+        printf("0 %d %d", a[0], a[n-1]);
+        return 0;
+    }
+
+    dp[0] = a[0];
+    s[0] = 0;
     for (int i = 1; i < n; i ++ ) {
-        if (dp[i-1] + s[i] > s[i]) {
-            dp[i] = dp[i-1] + s[i];
-            ind[i] = ind[i-1];
+        if (dp[i-1] + a[i] > a[i]) {
+            dp[i] = dp[i-1] + a[i];
+            s[i] = s[i-1];
         } else {
-            dp[i] = s[i];
-            ind[i] = i;
+            dp[i] = a[i];
+            s[i] = i;
         }
     }
     int k = 0;
-    for (int i = 1; i <= n; i ++ ) {
+    for (int i = 0; i < n; i ++ ) {
         if (dp[i] > dp[k]) {
             k = i;
         }
     }
-    if (dp[k] < 0) {
-        printf("0 %d %d", s[1], s[n]);
-    } else {
-        printf("%d %d %d", dp[k], s[ind[k]], s[k]);
-    }
+    printf("%d %d %d", dp[k], a[s[k]], a[k]);
     return 0;
 }
