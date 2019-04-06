@@ -29,8 +29,8 @@ int findFather(int n) {
     }
     while (a != father[a]) {
         int z = a;
-        father[z] = n;
         a = father[a];
+        father[z] = n;
     }
     return n;
 }
