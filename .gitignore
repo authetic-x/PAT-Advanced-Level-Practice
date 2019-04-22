@@ -1,0 +1,3 @@
+# test gitignore file
+*Lists.txt
+cmake-build*
